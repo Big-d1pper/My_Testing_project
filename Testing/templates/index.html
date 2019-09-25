@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{%load staticfiles%}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Добро пожаловать на Тесты</h1>
+    <p class="lead">Этот проет был создан с целью прохождения тестов</p>
+    <hr class="my-4">
+    <p>
+
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Тесты
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+        {% for test in my_test %}
+      <li>
+          <a href="{% url 'tests:test_detal' test.id %}">{{ test }}</a>
+      </li>
+    {% endfor %}
+  </div>
+</div>
+  </div>
+</div>
+
+{% endblock content %}

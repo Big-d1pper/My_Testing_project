@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap4 staticfiles %}
+
+{% block content %}
+<div class="alert alert-primary" role="alert">
+ Имя: {{ user.first_name }}
+</div>
+<div class="alert alert-info" role="alert">
+  Фамилия: {{ user.last_name }}
+</div>
+<div class="alert alert-secondary" role="alert">
+  Отчество: {{ user.middle_name }}
+</div>
+<div class="alert alert-success" role="alert">
+  Дата рождения: {{ user.date_birth }}
+</div>
+<div class="alert alert-danger" role="alert">
+  Ник нейм: {{ user.slug }}
+</div>
+{% endblock content %}
