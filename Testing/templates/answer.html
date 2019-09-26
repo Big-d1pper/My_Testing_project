@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{%load staticfiles%}
+
+{% block content %}
+
+{% if answer.try_answer == True %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>Ваш ответ верный</h1>
+    </div>
+</div>
+
+{% else %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Ваш ответ не верный</h1>
+    </div>
+</div>
+
+{% endif %}
+{% endblock content %}
+
+

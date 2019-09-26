@@ -37,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'social_core.backends.google.GoogleOAuth2',
-    # 'django.contrib.auth.backends.ModelBackend',
     'bootstrap4',
     'debug_toolbar',
     'apps.user_profile',
@@ -71,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <- Here
+                'social_django.context_processors.login_redirect'
             ],
         },
     },
@@ -141,8 +141,3 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR,  'static_files/')
 
 
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
-# Google Consumer Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '428155867969-c48vqunjv6aa6u7p7a7is2v7uavp1ii1.apps.googleusercontent.com'
-# Google Consumer Secret
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'WLrDbX5L1GoB4D8InxAOv7bR'

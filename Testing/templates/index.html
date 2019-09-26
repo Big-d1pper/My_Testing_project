@@ -3,7 +3,17 @@
 {%load staticfiles%}
 
 {% block content %}
-<!--<a href="{% url 'social:begin' 'google-oauth2' %}"><img src="/static/lgoogle.png" class="avatar-3" data-toggle="tooltip" title="{% trans 'Login via Google+' %}"></a>-->
+<strong>
+    {% if messages %}
+    <div class="alert alert-info">
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+  </strong>
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Добро пожаловать на Тесты</h1>
@@ -24,6 +34,7 @@
     {% endfor %}
   </div>
 </div>
+      <button type="button" class="btn btn-light"><a href="{% url 'tests:add_test'%}">Добавить тест</a></button>
   </div>
 </div>
 

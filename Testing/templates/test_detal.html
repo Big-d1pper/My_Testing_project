@@ -6,15 +6,15 @@
 <div class="container">
   <div class="jumbotron">
     <center>{{test}}</center>
-    {% for question in test.question.all %}
+    {% for question in question %}
     <li>
         <center><a href="{% url 'tests:question_detal' question.id %}">{{ question }}</a></center>
     </li>
 {% endfor %}
+      <button type="button" class="btn btn-light"><a href="{% url 'tests:add_question' test.id %}">Добавить вопрос</a></button>
+
   </div>
 </div>
-
-
 
 {% endblock content %}
 
